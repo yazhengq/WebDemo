@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
 	<body>
 	<div>
-		<form class="f1" action="WriteToDB" method="get">
+		<form class="f1" action="WriteGetDB" method="get">
 			<fieldset>
 				<legend>±íµ¥µÄ×¢²á</legend>
 				<table width=100%>

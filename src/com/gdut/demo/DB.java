@@ -22,6 +22,7 @@ public class DB {
 		return conn;
 	}
 	
+	//获取stmt语句
 	public static Statement getStmt(Connection conn){
 		Statement stmt = null;
 		try {
@@ -32,14 +33,36 @@ public class DB {
 		return stmt;
 	}
 	
-
+	//获取pstmt语句
+	public static PreparedStatement getPstmt(Connection conn, String sql){
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return pstmt;
+	}
 	
-	//执行查询
+	//执行查询 stmt
 	public static ResultSet executeQuery(Statement stmt, String sql){
 		
 		ResultSet rs = null;
 		try {
 			rs = stmt.executeQuery(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rs;		
+	}
+	
+	//执行查询 pstmt
+	public static ResultSet executeQuery(PreparedStatement pstmt, String sql){
+		
+		ResultSet rs = null;
+		try {
+			rs = pstmt.executeQuery(sql);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
