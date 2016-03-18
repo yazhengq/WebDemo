@@ -81,8 +81,6 @@ public class WriteGetDB extends HttpServlet {
 			pw.println("<tr><td>"+ id +"</td><td>"+ name +"</td><td>"+ password +"</td><td>"+ email +"</td></tr>" );
 			
 System.out.print("id: " + id);
-System.out.print("name: " + name);
-System.out.println();
 
 		}
 		pw.println("</table></body></html>");;
