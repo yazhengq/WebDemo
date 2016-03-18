@@ -60,7 +60,7 @@ public class WriteGetDB extends HttpServlet {
 		Connection conn = DB.getConn();
 		PrintWriter pw = null;
 		int id = 0;
-		String name = null, password = null, email = null;
+		String name = null, password = null, email = null, timestamp = null;
 		
 		resp.setContentType("text/html;charset=gb2312");
 		String title = "List All Parameters";
@@ -69,7 +69,7 @@ public class WriteGetDB extends HttpServlet {
 				+ "<body bgcolor='#FDF532'>\n" + "<h1 align='center'>" + title
 				+ "</h1>\n" + "<table border=1 align='center'>\n"
 				+ "<tr bgcolor=\"#FFAD00\">\n"
-				+ "<th>id</th><th>name</th><th>password</th><th>email</th></tr>" );
+				+ "<th>id</th><th>name</th><th>password</th><th>email</th><th>timestamp</th></tr>" );
 				
 		//获取ResultSet结果集
 		ResultSet rs = this.getInfrDB();
@@ -78,9 +78,10 @@ public class WriteGetDB extends HttpServlet {
 			name = rs.getString(2);
 			password = rs.getString(3);
 			email = rs.getString(4);
-			pw.println("<tr><td>"+ id +"</td><td>"+ name +"</td><td>"+ password +"</td><td>"+ email +"</td></tr>" );
+			timestamp = rs.getString(10);
+			pw.println("<tr><td>"+ id +"</td><td>"+ name +"</td><td>"+ password +"</td><td>"+ email +"</td><td>"+ timestamp +"</td></tr>" );
 			
-System.out.print("id: " + id);
+System.out.println("id: " + id);
 
 		}
 		pw.println("</table></body></html>");;
@@ -88,7 +89,6 @@ System.out.print("id: " + id);
 		
 	}
 
-	
 	//从数据库中查询获取结果
 	public ResultSet getInfrDB() throws Exception {
 		String selSQL = "select * from userinfo;";
