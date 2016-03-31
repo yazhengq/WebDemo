@@ -12,12 +12,12 @@
   </servlet-mapping>
   
   <servlet>
-  	<servlet-name>WriteGetDB</servlet-name>
+  	<servlet-name>WriteToDB</servlet-name>
     <servlet-class>com.gdut.demo.WriteGetDB</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>WriteGetDB</servlet-name>
-    <url-pattern>/WriteGetDB</url-pattern>
+    <servlet-name>WriteToDB</servlet-name>
+    <url-pattern>/WriteToDB</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

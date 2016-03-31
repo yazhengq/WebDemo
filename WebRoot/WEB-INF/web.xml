@@ -13,7 +13,7 @@
   
   <servlet>
   	<servlet-name>WriteToDB</servlet-name>
-    <servlet-class>com.gdut.demo.WriteToDB</servlet-class>
+    <servlet-class>com.gdut.demo.WriteGetDB</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>WriteToDB</servlet-name>

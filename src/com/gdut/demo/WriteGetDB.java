@@ -35,10 +35,11 @@ public class WriteGetDB extends HttpServlet {
 
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, req.getParameter("Name"));
+			pstmt.setString(1, name);
 			pstmt.setString(2, password);
 			pstmt.setString(3, email);
 			pstmt.executeUpdate();
+//			DB.executeQuery(pstmt, sql);			
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
